@@ -1,11 +1,17 @@
-require('dotenv').config();
-const { get } = require('env-var');
+//require('dotenv').config();
+import env from 'dotenv'
 
-const envs =  {
-    PORT: get('PORT').required().asPortNumber(),
-    PUBLIC_PATH: get('PUBLIC_PATH').default('public').asString()
+//const { get } = require('env-var');
+import ennvar from 'env-var';
+
+env.config();
+
+
+export const envs =  {
+    PORT: ennvar.get('PORT').required().asPortNumber(),
+    PUBLIC_PATH: ennvar.get('PUBLIC_PATH').default('public').asString()
 }
 
-module.exports = {
+/* module.exports = {
     envs
-}
+} */
